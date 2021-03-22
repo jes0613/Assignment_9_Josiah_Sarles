@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "The Joel Hilton Film Collection";
+    ViewBag.Dash = " - ";
+    ViewBag.SubTitle = "My Movie Collection";
+}
+
+@model MovieListViewModel
+
+<h1>@ViewBag.SubTitle</h1>
+
+<p>
+    Here is a list of all the movies added so far
+    <br /><br />
+    This list will not ever display the movie "Independence Day", because Joel once argued in a 4th of 
+    July podcast that “Independence Day” beats “Rocky IV” as the “Most American Movie 
+    Ever Made” which is obviously not true!
+</p>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Category
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Year
+                </th>
+                <th>
+                    Director
+                </th>
+                <th>
+                    Rating
+                </th>
+                <th>
+                    Edited
+                </th>
+                <th>
+                    Lent To:
+                </th>
+                <th>
+                    Notes
+                </th>
+                <th>
+                    
+                </th>
+                <th>
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.movies)
+            {
+                if (x.title == "Independence Day")
+                {
+                    continue;
+                }
+                else
+                {
+            <tr>
+                <td>
+                    @x.category
+                </td>
+                <td>
+                    @x.title
+                </td>
+                <td>
+                    @x.year
+                </td>
+                <td>
+                    @x.director
+                </td>
+                <td>
+                    @x.rating
+                </td>
+                <td>
+                    @x.edited
+                </td>
+                <td>
+                    @x.lent
+                </td>
+                <td>
+                    @x.notes
+                </td>
+                <td>
+                    <partial name="EditButton" model="x" />
+                </td>
+                <td>
+                    <partial name="DeleteButton" model="x" />
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

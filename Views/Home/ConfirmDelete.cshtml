@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.MovieTitle = Model.title;
+}
+
+<h1>@Model.title @ViewBag.SubTitle!</h1>
+
+<h5>You have successfully deleted the movie "@Model.title" from my collection.</h5>
+<br />
+<a class="btn btn-primary" asp-controller="Home" asp-action="FilmList">See Movie Collection</a>
