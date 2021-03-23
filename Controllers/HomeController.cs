@@ -66,7 +66,7 @@ namespace Assignment_9_Josiah_Sarles.Controllers
             });
         }
 
-        public IActionResult Redirect(int movieID)
+        public IActionResult RedirectToEdit(int movieID)
         { 
             Movie m = _context.Movies.FirstOrDefault(p => p.movieID == movieID);
 

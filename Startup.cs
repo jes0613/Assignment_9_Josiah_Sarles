@@ -59,9 +59,56 @@ namespace Assignment_9_Josiah_Sarles
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "home",
+                    "Homepage",
+                    new { Controller = "Home", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "enterFilm",
+                    "AddMovie",
+                    new { Controller = "Home", action = "EnterFilm" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "editFilm",
+                    "EditMovie",
+                    new { Controller = "Home", action = "EditFilm" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "viewFilms",
+                    "ViewMovies",
+                    new { Controller = "Home", action = "FilmList" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "podcasts",
+                    "Podcasts",
+                    new { Controller = "Home", action = "Podcasts" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "confirmEdit",
+                    "EditConfirmed",
+                    new { Controller = "Home", action = "ConfirmEdit" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "confirmDelete",
+                    "DeleteConfirmed",
+                    new { Controller = "Home", action = "ConfirmDelete" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "confirmAdd",
+                    "AddConfirmed",
+                    new { Controller = "Home", action = "ConfirmAdd" }
+                    );
+
+                endpoints.MapDefaultControllerRoute();
             });
+
 
             //Seed data function
             SeedData.EnsurePopulated(app);
