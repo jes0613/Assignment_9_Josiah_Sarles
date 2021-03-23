@@ -5,64 +5,49 @@
 }
 @model Movie
 
-<h5>Editing Movie: @ViewBag.Film[0].title</h5>
+<h5>Editing Movie: @Model.movieID</h5>
 
 <h1>@ViewBag.SubTitle Below</h1>
 
 <p>Use the form below to edit a movie in my collection</p>
 
-<input type="hidden" asp-for="movieID" />
 
 <div>
     <form asp-controller="Home" asp-action="EditFilm" method="post">
+        <input type="hidden" asp-for="@Model.movieID" />
         <div>
-            <label asp-for="category">
+            <label asp-for="@Model.category">
                 Category
             </label>
-            <label>
-                Current Film Category: @ViewBag.Film[0].category
-            </label>
-            <input asp-for="category" />
+            <input asp-for="@Model.category" />
         </div>
 
         <div>
-            <label asp-for="title">
+            <label asp-for="@Model.title">
                 Title
             </label>
-            <label>
-                Current Film Title: @ViewBag.Film[0].title
-            </label>
-            <input asp-for="title" />
+            <input asp-for="@Model.title" />
         </div>
 
         <div>
-            <label asp-for="year">
+            <label asp-for="@Model.year">
                 Year
             </label>
-            <label>
-                Current Film Year: @ViewBag.Film[0].year
-            </label>
-            <input asp-for="year" />
+            <input asp-for="@Model.year" />
         </div>
 
         <div>
-            <label asp-for="director">
+            <label asp-for="@Model.director">
                 Director
             </label>
-            <label>
-                Current Film Director: @ViewBag.Film[0].director
-            </label>
-            <input asp-for="director" />
+            <input asp-for="@Model.director" />
         </div>
 
         <div>
-            <label asp-for="rating">
+            <label asp-for="@Model.rating">
                 Rating
             </label>
-            <label>
-                Current Film Rating: @ViewBag.Film[0].rating
-            </label>
-            <select asp-for="rating">
+            <select asp-for="@Model.rating">
                 <option value="">Select One</option>
                 <option value="G">G</option>
                 <option value="PG">PG</option>
@@ -72,37 +57,28 @@
         </div>
 
         <div>
-            <label asp-for="edited">
+            <label asp-for="@Model.edited">
                 Edited?
             </label>
-            <label>
-                Current Film Edited?: @(@ViewBag.Film[0].edited == null ? "No" : @ViewBag.Film[0].edited)
-            </label>
-                <select asp-for="edited">
-                    <option value="">Select One</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </div>
-
-        <div>
-            <label asp-for="lent">
-                Lent To:
-            </label>
-            <label>
-                Current Film Lent?: @(@ViewBag.Film[0].lent == null ? "No" : @ViewBag.Film[0].lent)
-            </label>
-            <input asp-for="lent" />
+            <select asp-for="@Model.edited">
+                <option value="">Select One</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
         </div>
 
         <div>
-            <label asp-for="notes">
+            <label asp-for="@Model.lent">
+                Lent To:
+            </label>
+            <input asp-for="@Model.lent" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.notes">
                 Notes
             </label>
-            <label>
-                Current Film Notes: @(@ViewBag.Film[0].notes == null ? "No" : @ViewBag.Film[0].notes)
-            </label>
-            <input asp-for="notes" />
+            <input asp-for="@Model.notes" />
         </div>
 
         <button type="submit">Submit</button>
