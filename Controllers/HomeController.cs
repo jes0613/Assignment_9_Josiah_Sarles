@@ -38,6 +38,7 @@ namespace Assignment_9_Josiah_Sarles.Controllers
         {
                 return View();
         }
+
         [HttpPost]
         public IActionResult EnterFilm(Movie m)
         {
@@ -53,12 +54,6 @@ namespace Assignment_9_Josiah_Sarles.Controllers
             }
 
         }
-
-        public IActionResult ConfirmAdd()
-        {
-            
-            return View();
-        }
         
         public IActionResult FilmList()
         {
@@ -71,27 +66,52 @@ namespace Assignment_9_Josiah_Sarles.Controllers
             });
         }
 
+        [HttpGet]
         public IActionResult EditFilm(int movieID)
         {
             //pulls the appointment information to then display duing the group form
             var efilm = (from film in _repo.movies
-                       where film.movieID == movieID
-                       select new Movie()
-                       {
-                           movieID = film.movieID,
-                           category = film.category,
-                           title = film.title,
-                           year = film.year,
-                           director = film.director,
-                           rating = film.rating,
-                           edited = film.edited,
-                           lent = film.lent,
-                           notes = film.notes
+                         where film.movieID == movieID
+                         select new Movie()
+                         {
+                             movieID = film.movieID,
+                             category = film.category,
+                             title = film.title,
+                             year = film.year,
+                             director = film.director,
+                             rating = film.rating,
+                             edited = film.edited,
+                             lent = film.lent,
+                             notes = film.notes
 
-                       }).ToList();
+                         }).ToList();
 
             ViewBag.Film = efilm;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult EditFilm(Movie eM)
+        {
+            if (ModelState.IsValid)
+            {
+                Movie m = _context.Movies.FirstOrDefault(p => p.movieID == eM.movieID);
+                m.category = eM.category;
+                m.title = eM.title;
+                m.year = eM.year;
+                m.director = eM.director;
+                m.rating = eM.rating;
+                m.edited = eM.edited;
+                m.lent = eM.lent;
+                m.notes = eM.notes;
+                _context.SaveChanges();
+
+                return View("ConfirmEdit", m);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public IActionResult ConfirmEdit()
@@ -101,9 +121,10 @@ namespace Assignment_9_Josiah_Sarles.Controllers
         }
         public IActionResult ConfirmDelete(int movieID)
         {
-
-
-            return View();
+            Movie m = _context.Movies.FirstOrDefault(p => p.movieID == movieID);
+            _context.Remove(m);
+            _context.SaveChanges();
+            return View(m);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
