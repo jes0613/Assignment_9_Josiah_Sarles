@@ -24,6 +24,14 @@
 <p>Rating: @Model.rating</p>
 
 <p>Edited: @Model.edited</p>
+<div class="text-center">
+    @if (@Model.edited == "No")
+    {<p class="text-danger">
+            If Edited say "No", then means that you did not edit any of the movie information,
+            all that was updated was the edited variable.
+        </p>
+    }
+</div>
 
 <p>Lent To: @Model.lent</p>
 

@@ -85,11 +85,22 @@ namespace Assignment_9_Josiah_Sarles.Controllers
                 m.year = eM.year;
                 m.director = eM.director;
                 m.rating = eM.rating;
-                m.edited = "Yes";
                 m.lent = eM.lent;
                 m.notes = eM.notes;
 
                 _context.SaveChanges();
+
+                if (_context.ChangeTracker.HasChanges())
+                {
+                    m.edited = "Yes";
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    m.edited = "No";
+                    _context.SaveChanges();
+                }
+
             }
             else
             {
