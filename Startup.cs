@@ -77,9 +77,21 @@ namespace Assignment_9_Josiah_Sarles
                     );
 
                 endpoints.MapControllerRoute(
-                    "viewFilms",
-                    "ViewMovies",
-                    new { Controller = "Home", action = "FilmList" }
+                    "viewFilmscategorypage",
+                    "ViewMovies/{category}/Page{pageNum:int}",
+                    new { Controller = "Home", action = "FilmList", pageNum = 1 }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "viewFilmspages",
+                    "ViewMovies/Page{pageNum:int}",
+                    new { Controller = "Home", action = "FilmList", pageNum = 1 }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "viewFilmscategory",
+                    "ViewMovies/{category}",
+                    new { Controller = "Home", action = "FilmList", pageNum = 1 }
                     );
 
                 endpoints.MapControllerRoute(

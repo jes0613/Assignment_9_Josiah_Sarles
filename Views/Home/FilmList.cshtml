@@ -15,44 +15,43 @@
     July podcast that “Independence Day” beats “Rocky IV” as the “Most American Movie 
     Ever Made” which is obviously not true!
 </p>
+<div class="text-center">
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Category
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Year
+                    </th>
+                    <th>
+                        Director
+                    </th>
+                    <th>
+                        Rating
+                    </th>
+                    <th>
+                        Edited
+                    </th>
+                    <th>
+                        Lent To:
+                    </th>
+                    <th>
+                        Notes
+                    </th>
+                    <th>
 
-<div>
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>
-                    Category
-                </th>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Year
-                </th>
-                <th>
-                    Director
-                </th>
-                <th>
-                    Rating
-                </th>
-                <th>
-                    Edited
-                </th>
-                <th>
-                    Lent To:
-                </th>
-                <th>
-                    Notes
-                </th>
-                <th>
-                    
-                </th>
-                <th>
-                    
-                </th>
-            </tr>
-        </thead>
-        <tbody>
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
             @foreach (var x in Model.movies)
             {
                 if (x.title == "Independence Day")
@@ -61,40 +60,14 @@
                 }
                 else
                 {
-            <tr>
-                <td>
-                    @x.category
-                </td>
-                <td>
-                    @x.title
-                </td>
-                <td>
-                    @x.year
-                </td>
-                <td>
-                    @x.director
-                </td>
-                <td>
-                    @x.rating
-                </td>
-                <td>
-                    @x.edited
-                </td>
-                <td>
-                    @x.lent
-                </td>
-                <td>
-                    @x.notes
-                </td>
-                <td>
-                    <partial name="EditButton" model="x" />
-                </td>
-                <td>
-                    <partial name="DeleteButton" model="x" />
-                </td>
-            </tr>
+                    <partial name="MovieListInfo" model="x" />
                 }
             }
-        </tbody>
-    </table>
+        </table>
+    </div>
+
+    <div page-model="@Model.PagingInfo" page-action="Index" page-url-category="@Model.CurrentCategory" class="paginationhighlight">
+
+    </div>
+
 </div>

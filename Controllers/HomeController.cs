@@ -1,4 +1,5 @@
-﻿using Assignment_9_Josiah_Sarles.Models;
+﻿using Assignment_9_Joisah_Sarles.Models.ViewModels;
+using Assignment_9_Josiah_Sarles.Models;
 using Assignment_9_Josiah_Sarles.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,6 +16,7 @@ namespace Assignment_9_Josiah_Sarles.Controllers
         private readonly ILogger<HomeController> _logger;
         //variables for the database
         private IMoviesRepo _repo;
+        public int PageSize = 15;
         private MoviesDbContext _context { get; set; }
 
         public HomeController(ILogger<HomeController> logger, IMoviesRepo repo, MoviesDbContext con)
@@ -55,13 +57,26 @@ namespace Assignment_9_Josiah_Sarles.Controllers
 
         }
         
-        public IActionResult FilmList()
+        public IActionResult FilmList(string category, int pageNum = 1)
         {
 
             return View(new MovieListViewModel
             {
                 movies = _repo.movies
-                .OrderBy(p => p.movieID)
+                    .Where(p => category == null || p.category == category)
+                    .OrderBy(p => p.movieID)
+                    .Skip((pageNum - 1) * PageSize)
+                    .Take(PageSize)
+                ,
+
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = pageNum,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = category == null ? _repo.movies.Count() :
+                        _repo.movies.Where(x => x.category == category).Count()
+                },
+                CurrentCategory = category
 
             });
         }

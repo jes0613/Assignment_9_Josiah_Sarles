@@ -1,0 +1,36 @@
+﻿@model Movie
+
+<tbody>
+    <tr>
+        <td>
+            @Model.category
+        </td>
+        <td>
+            @Model.title
+        </td>
+        <td>
+            @Model.year
+        </td>
+        <td>
+            @Model.director
+        </td>
+        <td>
+            @Model.rating
+        </td>
+        <td>
+            @Model.edited
+        </td>
+        <td>
+            @Model.lent
+        </td>
+        <td>
+            @Model.notes
+        </td>
+        <td>
+            <partial name="EditButton" model="@Model" />
+        </td>
+        <td>
+            <partial name="DeleteButton" model="@Model" />
+        </td>
+    </tr>
+</tbody>
