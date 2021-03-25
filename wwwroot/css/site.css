@@ -1,24 +1,24 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-
-.paginationhighlight {
+/*Added the pagehighlight class to make the page numbers from the pagination look good*/
+.pagehighlight {
     display: inline-block;
 }
 
-.paginationhighlight a {
+.pagehighlight a {
     color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
 }
 
-.paginationhighlight a.active {
+.pagehighlight a.active {
     background-color: dodgerblue;
     color: white;
 }
 
-.paginationhighlight a:hover:not(.active) {
+.pagehighlight a:hover:not(.active) {
     background-color: #ddd;
 }
 

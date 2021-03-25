@@ -27,6 +27,7 @@ namespace Assignment_9_Josiah_Sarles.Models
             {
                 context.Movies.AddRange(
 
+                    //Contains all the movies from the google sheet collection
                     new Movie
                     {
                         category = "Action/Adventure",
@@ -3661,7 +3662,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "24 (Season 1)",
-                        year = 2001 - 2002,
+                        year = 2001,
                         director = "Joel Surnow, Robert Cochran",
                         rating = "TV-14",
                         edited = null,
@@ -3672,7 +3673,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "24 (Season 2)",
-                        year = 2002 - 2003,
+                        year = 2002,
                         director = "Joel Surnow, Robert Cochran",
                         rating = "TV-14",
                         edited = null,
@@ -3683,7 +3684,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "24 (Season 3)",
-                        year = 2003 - 2004,
+                        year = 2003,
                         director = "Joel Surnow, Robert Cochran",
                         rating = "TV-14",
                         edited = null,
@@ -3694,7 +3695,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Adventures of Brisco County, Jr.: The Complete Series, The",
-                        year = 1993 - 1994,
+                        year = 1993,
                         director = "Carlton Cuse, Jeffrey Boam",
                         rating = "TV-PG",
                         edited = null,
@@ -3705,7 +3706,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Arrested Development (Season 1)",
-                        year = 2003 - 2004,
+                        year = 2003,
                         director = "Mitchell Hurwitz",
                         rating = "TV-PG",
                         edited = null,
@@ -3716,7 +3717,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Arrested Development (Season 2)",
-                        year = 2004 - 2005,
+                        year = 2004,
                         director = "Mitchell Hurwitz",
                         rating = "TV-14",
                         edited = null,
@@ -3727,7 +3728,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Arrested Development (Season 3)",
-                        year = 2005 - 2006,
+                        year = 2005,
                         director = "Mitchell Hurwitz",
                         rating = "TV-14",
                         edited = null,
@@ -3760,7 +3761,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Avatar: The Last Airbender (Book 3)",
-                        year = 2007 - 2008,
+                        year = 2007,
                         director = "Michael Dante DiMartino, Bryan Konietzko",
                         rating = "TV-Y7",
                         edited = null,
@@ -3771,7 +3772,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Community (Season 1)",
-                        year = 2009 - 2010,
+                        year = 2009,
                         director = "Dan Harmon",
                         rating = "TV-PG",
                         edited = null,
@@ -3782,7 +3783,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Community (Season 2)",
-                        year = 2010 - 2011,
+                        year = 2010,
                         director = "Dan Harmon",
                         rating = "TV-PG",
                         edited = null,
@@ -3793,7 +3794,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Community (Season 3)",
-                        year = 2011 - 2012,
+                        year = 2011,
                         director = "Dan Harmon",
                         rating = "TV-PG",
                         edited = null,
@@ -3837,7 +3838,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Firefly: The Complete Series",
-                        year = 2002 - 2003,
+                        year = 2002,
                         director = "Joss Whedon",
                         rating = "TV-14",
                         edited = null,
@@ -4013,7 +4014,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Pushing Daisies (Season 2)",
-                        year = 2008 - 2009,
+                        year = 2008,
                         director = "Bryan Fuller",
                         rating = "TV-PG",
                         edited = null,
@@ -4024,7 +4025,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Roswell (Season 1)",
-                        year = 1999 - 2000,
+                        year = 1999,
                         director = "Jonathon Dukes",
                         rating = "TV-14",
                         edited = null,
@@ -4035,7 +4036,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Roswell (Season 2)",
-                        year = 2000 - 2001,
+                        year = 2000,
                         director = "Jonathon Dukes",
                         rating = "TV-14",
                         edited = null,
@@ -4046,7 +4047,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Roswell (Season 3)",
-                        year = 2001 - 2002,
+                        year = 2001,
                         director = "Jonathon Dukes",
                         rating = "TV-14",
                         edited = null,
@@ -4068,7 +4069,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Saved By the Bell (Season 5)",
-                        year = 1992 - 1993,
+                        year = 1992,
                         director = "Sam Bobrick",
                         rating = "TV-PG",
                         edited = null,
@@ -4079,7 +4080,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Saved by the Bell (Seasons 1 & 2)",
-                        year = 1989 - 1990,
+                        year = 1989,
                         director = "Sam Bobrick",
                         rating = "TV-PG",
                         edited = null,
@@ -4090,7 +4091,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Saved by the Bell (Seasons 3 & 4) ",
-                        year = 1990 - 1992,
+                        year = 1990,
                         director = "Sam Bobrick",
                         rating = "TV-PG",
                         edited = null,
@@ -4101,7 +4102,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 1 & 2)",
-                        year = 1990 - 1991,
+                        year = 1990,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,
@@ -4112,7 +4113,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 3)",
-                        year = 1991 - 1992,
+                        year = 1991,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,
@@ -4123,7 +4124,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 4)",
-                        year = 1992 - 1993,
+                        year = 1992,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,
@@ -4134,7 +4135,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 5)",
-                        year = 1993 - 1994,
+                        year = 1993,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,
@@ -4145,7 +4146,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 6)",
-                        year = 1994 - 1995,
+                        year = 1994,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,
@@ -4156,7 +4157,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 7)",
-                        year = 1995 - 1996,
+                        year = 1995,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,
@@ -4167,7 +4168,7 @@ namespace Assignment_9_Josiah_Sarles.Models
                     {
                         category = "Television",
                         title = "Wings (Season 8)",
-                        year = 1996 - 1997,
+                        year = 1996,
                         director = "David Angell, Peter Casey, David Lee",
                         rating = "TV-PG",
                         edited = null,

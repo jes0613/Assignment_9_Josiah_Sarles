@@ -1,6 +1,6 @@
 ﻿@model Movie
 
-<tbody>
+@* A parital view for printing all the movie info for each record *@
     <tr>
         <td>
             @Model.category
@@ -33,4 +33,3 @@
             <partial name="DeleteButton" model="@Model" />
         </td>
     </tr>
-</tbody>

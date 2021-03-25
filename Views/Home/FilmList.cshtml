@@ -52,21 +52,24 @@
                     </th>
                 </tr>
             </thead>
-            @foreach (var x in Model.movies)
-            {
-                if (x.title == "Independence Day")
+            <tbody>
+                @* Still doesn't print out the movie Independence day*@
+                @foreach (var x in Model.movies)
                 {
-                    continue;
+                    if (x.title == "Independence Day")
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        <partial name="MovieListInfo" model="x" />
+                    }
                 }
-                else
-                {
-                    <partial name="MovieListInfo" model="x" />
-                }
-            }
+            </tbody>
         </table>
     </div>
 
-    <div page-model="@Model.PagingInfo" page-action="Index" page-url-category="@Model.CurrentCategory" class="paginationhighlight">
+    <div page-model="@Model.PagingInfo" page-action="FilmList" page-url-category="@Model.CurrentCategory" class="pagehighlight">
 
     </div>
 

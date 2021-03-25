@@ -15,8 +15,6 @@ namespace Assignment_9_Joisah_Sarles.Infrastructure
     public class PageLinkTagHelper : TagHelper
     {
         //THis is the TagHelper Class I made for pagination
-        //Contains all the stuff from the videos for this week
-
         private IUrlHelperFactory urlHelperFactory;
 
         public PageLinkTagHelper(IUrlHelperFactory hp)

@@ -29,6 +29,7 @@ namespace Assignment_9_Josiah_Sarles
 
             services.AddDbContext<MoviesDbContext>(options =>
             {
+                //uses sqlite database
                 options.UseSqlite(Configuration["ConnectionStrings:MoviesConnection"]);
             });
 
@@ -58,6 +59,8 @@ namespace Assignment_9_Josiah_Sarles
 
             app.UseEndpoints(endpoints =>
             {
+
+                // All the endpoints to make the url routes pretty
                 endpoints.MapControllerRoute(
                     "home",
                     "Homepage",
